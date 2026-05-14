@@ -58,6 +58,29 @@ def open_register_window():
 
     Button(reg_win, text="Register", width=15, bg="blue", fg="white", command=register).pack(pady=20)
 
+#log in function
+def login():
+    uname = entry_login_uname.get()
+    password = entry_login_pass.get()
+
+    if uname == "" or password == "":
+        messagebox.showerror("Error","All fields are required")
+        return
+   
+    try:
+        with open("users.txt", "r") as file:
+            for line in file:
+                saved_uname = line.strip().split(", ")[0]
+                saved_pass = line.strip().split(", ")[2]
+
+                if uname == saved_uname and password == saved_pass:
+                    messagebox.showinfo("Success", "Login Successful!")
+                    #open_home_window(uname)
+                    return
+            messagebox.showerror("Error", "Invalid Username or Password")
+    except FileNotFoundError:
+        messagebox.showerror("Error", "No registered users found.")
+
 #Login Page
 root = Tk()
 root.title("Login Page")
