@@ -68,7 +68,7 @@ def login():
         return
    
     try:
-        with open("users.txt", "r") as file:
+        with open("users.txt") as file:
             for line in file:
                 saved_uname = line.strip().split(", ")[0]
                 saved_pass = line.strip().split(", ")[2]
