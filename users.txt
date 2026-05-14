@@ -1,0 +1,2 @@
+user, user@email.com, userpass
+user1, user1@email.com, user1pass
