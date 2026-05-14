@@ -98,6 +98,6 @@ entry_login_pass = Entry(root, width=30, show="*")
 entry_login_pass.pack()
 
 Button(root, text="Login", width=15, bg="green", fg="white", command=login).pack(pady=10)
-Button(root, text="Register", width=15, bg="blue", fg="white", command=open_register_window).pack()
+Button(root, text="Register", width=15, bg="pink", fg="white", command=open_register_window).pack()
 
 root.mainloop()
